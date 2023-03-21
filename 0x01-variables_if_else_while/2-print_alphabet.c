@@ -6,7 +6,6 @@
 * Return: the program retuns 0 and exit
 *
 */
-
 int main(void)
 {
 	char c;
