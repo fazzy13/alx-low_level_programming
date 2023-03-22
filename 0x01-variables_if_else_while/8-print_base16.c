@@ -11,10 +11,20 @@ int main(void)
 {
 	int i;
 
+	/*print numbers*/
 	for (i = 0; i < 16; i++)
 	{
-		putchar(i);
+		putchar('0' + i);
 	}
+
+	/*print alphabets*/
+	for (i = 0; i < 6; i++)
+	{
+		putchar('a' + i);
+	}
+
+	/*newline characters*/
 	putchar('\n');
+
 	return (0);
 }
