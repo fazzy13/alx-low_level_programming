@@ -7,6 +7,7 @@
 *
 */
 
+/**
 int main(void)
 {
 	int num1, num2;
@@ -30,3 +31,37 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
+*/
+
+
+#include <stdio.h>
+
+int main(void) {
+	
+    int i, j;
+
+    for (i = 0; i < 10; i++) {
+        for (j = i; j < 10; j++) {
+            putchar('0' + i);
+            putchar('0' + j);
+            if (i != 9 || j != 9) {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+    }
+
+    for (i = 1; i < 10; i++) {
+        for (j = 0; j < i; j++) {
+            putchar('0' + i);
+            putchar('0' + j);
+            if (i != 9 || j != 8) {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+    }
+
+    return 0;
+}
+
