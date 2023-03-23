@@ -34,33 +34,38 @@ int main(void)
 */
 
 
-#include <stdio.h>
-
-int main(void) {
-	
+int main(void)
+{
     int i, j;
 
-    for (i = 0; i < 10; i++) {
-        for (j = i; j < 10; j++) {
+    for (i = 0; i < 10; i++)
+	{
+        for (j = i; j < 10; j++)
+		{
             putchar('0' + i);
             putchar('0' + j);
-            if (i != 9 || j != 9) {
+            if (i != 9 || j != 9)
+			{
                 putchar(',');
                 putchar(' ');
             }
         }
     }
 
-    for (i = 1; i < 10; i++) {
-        for (j = 0; j < i; j++) {
+    for (i = 1; i < 10; i++)
+	{
+        for (j = 0; j < i; j++)
+		{
             putchar('0' + i);
             putchar('0' + j);
-            if (i != 9 || j != 8) {
+            if (i != 9 || j != 8)
+			{
                 putchar(',');
                 putchar(' ');
             }
         }
     }
+	putchar('\n');
 
     return 0;
 }
