@@ -7,7 +7,7 @@
 *
 */
 
-int main()
+int main(void)
 {
 	int num1, num2;
 
@@ -20,7 +20,6 @@ int main()
 			putchar(' ');
 			putchar(num2 / 10 + '0');
 			putchar(num2 % 10 + '0');
-			putchar(' ');
 			if (num1 != 99 || num2 != 99)
 			{
 				putchar(',');
