@@ -1,70 +1,41 @@
 #include <stdio.h>
 
 /**
-* main - Entry point of the programm
-*
-* Return: Exit point of the programm
-*
-*/
+ * *main - print a num pair from 00-99 but no repeats (00 01, 00 02, 00 03,...)
+ *Return: Always 0 (Success)
+ **/
 
-/**
 int main(void)
 {
-	int num1, num2;
+	int tenz;
+	int onez;
+	int tz;
+	int oz;
 
-	for (num1 = 0; num1 < 100; num1++)
+	for (tenz = '0'; tenz <= '9'; tenz++)
 	{
-		for (num2 = num1; num2 < 100; num2++)
+		for (onez = '0'; onez <= '9'; onez++)
 		{
-			putchar(num1 / 10 + '0');
-			putchar(num1 % 10 + '0');
-			putchar(' ');
-			putchar(num2 / 10 + '0');
-			putchar(num2 % 10 + '0');
-			if (num1 != 99 || num2 != 99)
+			for (tz = tenz; tz <= '9'; tz++)
 			{
-				putchar(',');
-				putchar(' ');
+				for (oz = onez + 1; oz <= '9'; oz++)
+				{
+					putchar(tenz);
+					putchar(onez);
+					putchar(' ');
+					putchar(tz);
+					putchar(oz);
+
+					if (!((tenz == '9' && onez == '8') && (tz == '9' && oz == '9')))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+				oz = '0';
 			}
 		}
 	}
 	putchar('\n');
 	return (0);
 }
-*/
-int main(void)
-{
-    int i, j;
-
-    for (i = 0; i < 10; i++)
-	{
-        for (j = i; j < 10; j++)
-		{
-            putchar('0' + i);
-            putchar('0' + j);
-            if (i != 9 || j != 9)
-			{
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-
-    for (i = 1; i < 10; i++)
-	{
-        for (j = 0; j < i; j++)
-		{
-            putchar('0' + i);
-            putchar('0' + j);
-            if (i != 9 || j != 8)
-			{
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-	putchar('\n');
-
-    return 0;
-}
-
