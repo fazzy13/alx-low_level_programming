@@ -11,7 +11,7 @@ void print_alphabet_x10(void)
 	char lower;
 	int i;
 
-	for (i = 0; i <= 10; i++)
+	for (i = 0; i <= 9; i++)
 	{
 		for (lower = 97; lower <= 122; lower++)
 		{
