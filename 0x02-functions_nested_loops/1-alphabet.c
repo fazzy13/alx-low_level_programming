@@ -11,7 +11,7 @@ void print_alphabet(void)
 {
 	char lower = 97;
 
-	while (lower != 122)
+	while (lower != 123)
 	{
 		_putchar(lower);
 		lower++;
