@@ -20,6 +20,7 @@ int main()
 		
 		num1 = num2;
 		num2 = next_num;
+		printf("%d", next_num);
 		count++;
 	}
 	putchar('\n');
