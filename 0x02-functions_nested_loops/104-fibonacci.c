@@ -7,22 +7,22 @@
 
 int main(void)
 {
-	int num1 = 1;
-	int num2 = 2;
-	int i, next_num;
-	
-	printf("%d, %d", num1, num2);
-	
+	long int num1 = 1;
+	long int num2 = 2;
+	long int i, next_num;
+
+	printf("%ld, %ld", num1, num2);
+
 	for (i = 3; i <= 98; i++)
 	{
 		next_num = num1 + num2;
-		printf(", %d", next_num);
+		printf(", %ld", next_num);
 		num1 = num2;
 		num2 = next_num;
 	}
-	
+
 	printf("\n");
-	
+
 	return (0);
 }
 
