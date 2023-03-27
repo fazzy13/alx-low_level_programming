@@ -10,12 +10,13 @@ int main()
 	int num1 = 1;
 	int num2 = 2;
 	int next_num;
-
+	
+	printf("%d, %d", num1, num2);
 	int count = 0;
 	
 	while (count < 48)
 	{
-		printf("%d ,", num1);
+		printf(",");
 		next_num = num1 + num2;
 		
 		num1 = num2;
@@ -24,4 +25,4 @@ int main()
 	}
 	putchar('\n');
 	return (0);
-}
+} 
