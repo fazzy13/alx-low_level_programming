@@ -12,12 +12,12 @@ int main()
 	int next_num;
 	int count = 0;
 	printf("%d, %d", num1, num2);
-	
+
 	while (count < 48)
 	{
 		printf(",");
 		next_num = num1 + num2;
-		
+
 		num1 = num2;
 		num2 = next_num;
 		printf("%d", next_num);
