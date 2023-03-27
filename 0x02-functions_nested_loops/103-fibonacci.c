@@ -12,6 +12,7 @@ int main(void)
 	int second_term = 2;
 	int sum = 0;
 	int current_term = second_term;
+	int next_term;
 
 	while (current_term <= 4000000)
 	{
@@ -19,8 +20,7 @@ int main(void)
 		{
 			sum += current_term;
 		}
-		int next_term = first_term + second_term;
-
+		next_term = first_term + second_term;
 		first_term = second_term;
 		second_term = next_term;
 		current_term = second_term;
