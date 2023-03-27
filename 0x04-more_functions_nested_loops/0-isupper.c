@@ -4,6 +4,8 @@
 * _isupper - fuction to check super chars
 *
 * @c: character to check
+*
+* Return: exit point of the programm
 */
 
 int _isupper(int c)
