@@ -53,10 +53,10 @@ void print_times_table_row(int n, int multiplier)
  */
 void print_times_table(int n)
 {
+	int i, j;
+
     if (n < 0 || n > 15)
         return;
-
-    int i, j;
 
     for (i = 0; i <= n; i++)
     {
