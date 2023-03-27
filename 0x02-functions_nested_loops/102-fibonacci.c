@@ -14,7 +14,7 @@ int main(void)
 
 	printf("%d, %d", num1, num2);
 
-	while (count < 48)
+	while (count < 47)
 	{
 		printf(", ");
 		next_num = num1 + num2;
