@@ -19,7 +19,7 @@ void print_times_table_row(int n, int multiplier)
         digit1 = result / 100;
         digit2 = (result / 10) % 10;
         digit3 = result % 10;
-        putchar(',');
+        _putchar(',');
         _putchar(' ');
         _putchar(digit1 + '0');
         _putchar(digit2 + '0');
