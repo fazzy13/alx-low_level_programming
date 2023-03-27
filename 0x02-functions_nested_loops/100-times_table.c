@@ -21,7 +21,7 @@ void print_times_table_row(int n, int multiplier)
         digit2 = (result / 10) % 10;
         digit3 = result % 10;
         putchar(',');
-        putchar(' ');
+        putchar(',');
         putchar(digit1 + '0');
         putchar(digit2 + '0');
         putchar(digit3 + '0');
