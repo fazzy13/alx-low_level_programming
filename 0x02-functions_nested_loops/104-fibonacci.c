@@ -7,9 +7,9 @@
 
 int main(void)
 {
-	long int num1 = 1;
-	long int num2 = 2;
-	long int i, next_num;
+	unsigned long num1 = 1;
+	unsigned long num2 = 2;
+	unsigned long i, next_num;
 
 	printf("%ld, %ld", num1, num2);
 
