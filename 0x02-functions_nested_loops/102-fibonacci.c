@@ -7,9 +7,9 @@
 */
 int main(void)
 {
-	long long num1 = 1;
-	int long num2 = 2;
-	int long next_num;
+	long long int num1 = 1;
+	int long int num2 = 2;
+	int long int next_num;
 	int count = 0;
 
 	printf("%lld, %lld", num1, num2);
