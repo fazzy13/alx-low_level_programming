@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 void print_times_table_row(int n, int multiplier);
 void print_times_table(int n);
@@ -21,10 +20,10 @@ void print_times_table_row(int n, int multiplier)
         digit2 = (result / 10) % 10;
         digit3 = result % 10;
         putchar(',');
-        putchar(',');
-        putchar(digit1 + '0');
-        putchar(digit2 + '0');
-        putchar(digit3 + '0');
+        _putchar(' ');
+        _putchar(digit1 + '0');
+        _putchar(digit2 + '0');
+        _putchar(digit3 + '0');
     }
     else if (result > 9)
     {
