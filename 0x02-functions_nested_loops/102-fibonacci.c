@@ -5,17 +5,18 @@
 *
 * Return: return success
 */
-int main()
+int main(void)
 {
 	int num1 = 1;
 	int num2 = 2;
 	int next_num;
 	int count = 0;
+
 	printf("%d, %d", num1, num2);
 
 	while (count < 48)
 	{
-		printf(",");
+		printf(", ");
 		next_num = num1 + num2;
 
 		num1 = num2;
