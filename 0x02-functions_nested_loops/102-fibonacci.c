@@ -7,12 +7,12 @@
 */
 int main(void)
 {
-	long long int num1 = 1;
-	int long int num2 = 2;
-	int long int next_num;
+	long int num1 = 1;
+	long int num2 = 2;
+	long int next_num;
 	int count = 0;
 
-	printf("%lld, %lld", num1, num2);
+	printf("%ld, %ld", num1, num2);
 
 	while (count < 47)
 	{
@@ -21,7 +21,7 @@ int main(void)
 
 		num1 = num2;
 		num2 = next_num;
-		printf("%lld", next_num);
+		printf("%ld", next_num);
 		count++;
 	}
 	putchar('\n');
