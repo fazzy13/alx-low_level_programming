@@ -9,13 +9,14 @@ void more_numbers(void)
 {
 	int col, row;
 
-	for (col = 0; col < 11; col++)
+	for (col = 0; col < 10; col++)
 	{
-		for (row = 0; row < 15; row++)
+		for (row = 0; row <= 14; row++)
 		{
-			_putchar(row + '0');
+			if (row >= 10)
+			_putchar((row / 10) + '0');
+			_putchar((row % 10) + '0'); 
 		}
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
