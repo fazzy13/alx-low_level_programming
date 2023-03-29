@@ -12,7 +12,7 @@
 */
 int main(void)
 {
-	int num;
+	char num;
 
 	for (num = 0; num <= 101; num++)
 	{
@@ -31,9 +31,9 @@ int main(void)
 		}
 		else
 		{
-			printf(num);
+			printf(num + '0');
 		}
-		print("\n");
+		printf("\n");
 	}
 	return (0);
 }
