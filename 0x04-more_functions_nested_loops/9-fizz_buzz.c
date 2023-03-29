@@ -12,28 +12,27 @@
 */
 int main(void)
 {
-	char num;
+	int num;
 
-	for (num = 0; num <= 101; num++)
+	for (num = 1; num <= 100; num++)
 	{
-		printf(" ");
 		if (num % 3 == 0 && num % 5 == 0)
 		{
-			printf("FizzBuzz");
+			printf("FizzBuzz ");
 		}
 		else if (num % 3 == 0)
 		{
-			printf("Fizz");
+			printf("Fizz ");
 		}
 		else if (num % 5 == 0)
 		{
-			printf("Buzz");
+			printf("Buzz ");
 		}
 		else
 		{
-			printf(num + '0');
+			printf("%d ", num);
 		}
-		printf("\n");
 	}
+	printf("\n");
 	return (0);
 }
