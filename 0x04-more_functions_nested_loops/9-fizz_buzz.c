@@ -33,6 +33,7 @@ int main(void)
 		{
 			printf(num);
 		}
-		print("\n")
+		print("\n");
 	}
+	return (0);
 }
