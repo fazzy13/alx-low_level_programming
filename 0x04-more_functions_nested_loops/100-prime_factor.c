@@ -6,22 +6,23 @@
 * Return: return the largest prime factor
 *
 */
-
 int main(void)
 {
-	long int  num = 612852475143;
-	long int largest_factor = 1;
-	long int factor = 2;
+	unsigned long num = 612852475143;
+	unsigned long divisor = 2;
 
-	while (num > 1)
+	while (divisor < num)
 	{
-		if (num %  factor == 0)
+		if (num % divisor == 0)
 		{
-			largest_factor = factor;
-			num = factor;
+			num /= divisor;
+			divisor = 2;
 		}
-		factor++;
+		else
+			divisor++;
 	}
-	printf("%ld\n", largest_factor);
+
+	printf("%lu\n", num);
+
 	return (0);
 }
