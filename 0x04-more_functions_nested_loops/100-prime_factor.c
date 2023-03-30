@@ -10,15 +10,15 @@
 int main(void)
 {
 	long int  num = 612852475143;
-	long int largest_factor = 0;
+	long int largest_factor = 1;
 	long int factor = 2;
 
 	while (num > 1)
 	{
 		if (num %  factor == 0)
 		{
-			largest_factor /= factor;
 			largest_factor = factor;
+			num = factor;
 		}
 		factor++;
 	}
