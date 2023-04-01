@@ -18,5 +18,5 @@ void print_rev(char *s)
 		s[end] = temp;
 
 	}
-	printf("%c\n", s);
+	printf("%c\n", s[0]);
 }
