@@ -20,3 +20,11 @@ void print_rev(char *s)
 	}
 	
 }
+
+
+int main() {
+    char str[] = "hello world";
+    reverse_string(str);
+    printf("%s\n", str);
+    return 0;
+}
