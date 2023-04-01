@@ -16,15 +16,7 @@ void print_rev(char *s)
 		char temp = s[start];
 		s[start] = s[end];
 		s[end] = temp;
-		
+
 	}
-	
-}
-
-
-int main() {
-    char str[] = "hello world";
-    reverse_string(s);
-    printf("%s\n", s);
-    return 0;
+	printf("%s\n", s[0]);
 }
