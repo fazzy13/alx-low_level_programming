@@ -7,7 +7,7 @@
 */
 void rev_string(char *s)
 {
-	char str_copy = strdup(s);
+	char len = strlen(s);
 
-	strrev(str_copy);
+	strrev(len);
 }
