@@ -24,7 +24,7 @@ void print_rev(char *s)
 
 int main() {
     char str[] = "hello world";
-    reverse_string(str);
-    printf("%s\n", str);
+    reverse_string(s);
+    printf("%s\n", s);
     return 0;
 }
