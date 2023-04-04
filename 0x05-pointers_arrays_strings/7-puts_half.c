@@ -7,6 +7,8 @@
 * @str: the string to divide
 *
 */
+void _putchar(char c);
+
 void puts_half(char *str)
 {
 	int len = strlen(str);
