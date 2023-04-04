@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 #include <string.h>
 
 /**
@@ -7,7 +7,6 @@
 * @str: the string to divide
 *
 */
-void _putchar(char c);
 
 void puts_half(char *str)
 {
@@ -16,7 +15,7 @@ void puts_half(char *str)
 	for (len /= 2; str[len] != '\0'; len++)
 	{
 
-		_putchar(str[len]);
+		printf("%d", str[len]);
 	}
-	_putchar('\n');
+	_putchar("\n");
 }
