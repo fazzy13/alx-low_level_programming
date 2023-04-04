@@ -10,10 +10,8 @@
 void puts_half(char *str)
 {
 	int len = strlen(str);
-	int i;
-	int half = (len) / 2;
 
-	for (i = half; i < len[i]; i++)
+	for (len /= 2; str[i] != '\0'; len++)
 	{
 
 		printf("%c", str[i]);
