@@ -15,7 +15,7 @@ void puts_half(char *str)
 	for (len /= 2; str[len] != '\0'; len++)
 	{
 
-		printf("%d", str[len]);
+		printf("%c", str[len]);
 	}
 	printf("\n");
 }
