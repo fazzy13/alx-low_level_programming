@@ -15,16 +15,16 @@
 
 	srand(time(NULL));
 
-	for (; i < PASSWORD_LENGTH; I++)
+	for (i = 0 i < PASSWORD_LENGTH; I++)
 	{
 		int characters;
 
-		while (!isalnum(character))
+		while (!isalnum(characters))
 		{
 			character = rand() % 127;
-			charcter++;
+			characters++;
 		}
-		pass[i] = character;
+		pass[i] = characters;
 	}
 	pass[PASSWORD_LENGTH] = '\0';
 
