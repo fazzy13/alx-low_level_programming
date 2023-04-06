@@ -6,7 +6,7 @@
  * Return: The integer value of the string
  */
 int _atoi(char *s)
-i{
+{
 	signed int sign = 1, num = 0, start = 0;
 
 	while (*s != '\0')
