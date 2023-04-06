@@ -1,4 +1,5 @@
- /**
+ #include "main.h"
+/**
  * _atoi - Convert a string to an integer
  *
  * @s: The string to convert
@@ -7,9 +8,7 @@
  */
 int _atoi(char *s)
 {
-	unsigned int sign,
-	int num;
-	unsigned start;
+	int sign = 1, num = 0, start = 0;
 
 	while (*s != '\0')
 	{
