@@ -12,6 +12,7 @@
  int main(void)
 {
 	char pass[PASSWORD_LENGTH + 1];
+	int i;
 
 	srand(time(NULL));
 
@@ -21,7 +22,7 @@
 
 		while (!isalnum(characters))
 		{
-			character = rand() % 127;
+			characters = rand() % 127;
 			characters++;
 		}
 		pass[i] = characters;
