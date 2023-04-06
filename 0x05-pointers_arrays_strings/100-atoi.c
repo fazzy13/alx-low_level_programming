@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _atoi - Convert a string to an integer
  *
@@ -9,8 +8,8 @@
 int _atoi(char *s)
 {
 	unsigned int sign = 1;
-	int num = 0;
-	unsigned int start = 0;
+	unsigned int num = 0;
+	int start = 0;
 
 	while (*s != '\0')
 	{
