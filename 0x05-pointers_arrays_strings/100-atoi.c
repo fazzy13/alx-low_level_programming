@@ -1,4 +1,3 @@
- #include "main.h"
 /**
  * _atoi - Convert a string to an integer
  *
@@ -7,8 +6,9 @@
  * Return: The integer value of the string
  */
 int _atoi(char *s)
-{
-	int sign = 1, num = 0, start = 0;
+i{
+	unsigned int sign = 1;
+	int num = 0, start = 0;
 
 	while (*s != '\0')
 	{
