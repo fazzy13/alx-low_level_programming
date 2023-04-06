@@ -26,7 +26,7 @@ int _atoi(char *s)
 				if (sign == 1)
 					return (INT_MAX);
 				else
-					return (INT_MAX);
+					return (INT_MIN);
 			}
 		}
 			else if (start)
