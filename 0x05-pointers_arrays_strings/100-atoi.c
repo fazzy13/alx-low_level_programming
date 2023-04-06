@@ -19,7 +19,7 @@ int _atoi(char *s)
 			start = 1;
 			num = num * 10 + (*s - '0');
 
-			if (num > 0)
+			if (num < 0)
 			{
 				if (sign == 1)
 					return (2147483647);
