@@ -41,19 +41,19 @@
 
 int main(void)
 {
-    char password[PASSWORD_LENGTH + 1]; // +1 for null terminator
+    char password[PASSWORD_LENGTH + 1];
 
-    srand(time(NULL)); // initialize random number generator with current time
+    srand(time(NULL));
 
     for (int i = 0; i < PASSWORD_LENGTH; i++) {
         int c;
         do {
-            c = rand() % 127; // generate random character code between 0 and 126
-        } while (!isalnum(c)); // ensure character is alphanumeric
+            c = rand() % 127;
+        } while (!isalnum(c));
         password[i] = c;
     }
 
-    password[PASSWORD_LENGTH] = '\0'; // null terminator
+    password[PASSWORD_LENGTH] = '\0';
 
     printf("Random password: %s\n", password);
 
