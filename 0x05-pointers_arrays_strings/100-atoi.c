@@ -20,12 +20,12 @@ int _atoi(char *s)
 			start = 1;
 			num = num * 10 + (*s - '0');
 
-			if (num < 0)
+			if (num > INT_MAX)
 			{
 				if (sign == 1)
-					return (2147483647);
+					return (INT_MAX);
 				else
-					return (-2147483648);
+					return (INT_MAX);
 			}
 		}
 			else if (start)
