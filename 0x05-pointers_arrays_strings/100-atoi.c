@@ -21,9 +21,9 @@ int _atoi(char *s)
 			if (num < 0)
 			{
 				if (sign == 1)
-					return 2147483647;
+					return (2147483647);
 				else
-					return -2147483648;
+					return (-2147483648);
 			}
 		}
 			else if (start)
@@ -32,6 +32,6 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return num * sign;
+	return (num * sign);
 }
 
