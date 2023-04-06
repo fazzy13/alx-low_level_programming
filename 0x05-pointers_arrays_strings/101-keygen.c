@@ -42,11 +42,13 @@
 int main(void)
 {
     char password[PASSWORD_LENGTH + 1];
+	int i;
+	int c;
 
     srand(time(NULL));
 
-    for (int i = 0; i < PASSWORD_LENGTH; i++) {
-        int c;
+    for (i = 0; i < PASSWORD_LENGTH; i++) {
+
         do {
             c = rand() % 127;
         } while (!isalnum(c));
