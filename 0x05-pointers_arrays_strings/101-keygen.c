@@ -51,7 +51,7 @@ int main(void)
     for (i = 0; i < PASSWORD_LENGTH; i++) {
 
         do {
-            c = rand() % 127;
+            c = rand() % 125;
         } while (!isalnum(c));
         password[i] = c;
     }
