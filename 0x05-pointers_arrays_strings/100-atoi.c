@@ -1,4 +1,4 @@
-/**
+ /**
  * _atoi - Convert a string to an integer
  *
  * @s: The string to convert
@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int sign = 1, num = 0, start = 0;
+	unsigned int sign = 1, num = 0, start = 0;
 
 	while (*s != '\0')
 	{
