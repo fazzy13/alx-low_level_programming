@@ -4,7 +4,6 @@
 * Return: Always (0)
 *
 */
-i
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
