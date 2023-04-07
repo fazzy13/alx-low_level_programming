@@ -11,6 +11,7 @@
 int main(void)
 {
 	int random;
+	int add;
 	int sum = 2772;
 
     srand(time(NULL));
