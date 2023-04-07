@@ -19,7 +19,7 @@ int main(void)
     for (add = 0; sum = 2772; sum > 122; add++)
 	{
 
-		random = rand() % 125 + 1;
+		random = (rand() % 125) + 1;
 		printf("%c", random);
 		sum -= random;
         
