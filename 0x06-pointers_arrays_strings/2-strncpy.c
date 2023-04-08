@@ -9,6 +9,7 @@
 *
 * @n: nth of the string
 *
+* Return: return destination.
 */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -22,4 +23,6 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[i] = '\0';
 		i++;
 	}
+
+	return (dest);
 }
