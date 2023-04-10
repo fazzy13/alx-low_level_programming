@@ -25,7 +25,6 @@ char *cap_string(char *str)
 			next = 0;
 		}
 	}
-		
 
 	return (str);
 }
