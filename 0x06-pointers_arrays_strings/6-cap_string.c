@@ -1,5 +1,5 @@
 #include <ctype.h>
-#include <string.h>
+#include <stdbool.h>
 /**
 * cap_string - a function that capitalizes all words of a string.
 *
@@ -9,22 +9,29 @@
 */
 char *cap_string(char *str)
 {
-	int i;
-	int len = strlen(str);
-	int shift;
+	bool new_word = true;
 
-	for (i = 0; i < len; i++)
+	for (int i = 0; str[i] != '\0'; i++)
 	{
-		if (isspace(str[i]) || ispunct(str[i]))
+		if (new_word && islower(str[i]))
 		{
-			shift = 1;
-		}
-		else if (shift)
-		{
+
 			str[i] = toupper(str[i]);
-			shift = 0;
+		}
+
+
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+			str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+			str[i] == '}' || str[i] == '\0')
+		{
+			new_word = true;
+		}
+		else
+		{
+			new_word = false;
 		}
 	}
-
 	return (str);
 }
