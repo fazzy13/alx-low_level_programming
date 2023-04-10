@@ -11,7 +11,7 @@ char *cap_string(char *str)
 {
 	int i;
 	int len = strlen(str);
-	int shift = 1;
+	int shift;
 
 	for (i = 0; i < len; i++)
 	{
