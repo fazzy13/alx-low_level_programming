@@ -1,3 +1,5 @@
+#include <ctype>
+#include <string.h>
 /**
 * cap_string - a function that capitalizes all words of a string.
 *
@@ -8,11 +10,22 @@
 char *cap_string(char *str)
 {
 	int i;
+	int len = strlen(str);
+	int shift;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; i < len; i++)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] - 32;
+		if (isspace(str[i]) || ispunct(str[i]))
+		{
+			next = 1;
+		}
+		else
+		{
+			str[i] = toupper(str[i]);
+			next = 0;
+		}
 	}
+		
+
 	return (str);
 }
