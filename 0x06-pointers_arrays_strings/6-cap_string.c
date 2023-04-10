@@ -1,4 +1,4 @@
-#include <ctype>
+#include <ctype.h>
 #include <string.h>
 /**
 * cap_string - a function that capitalizes all words of a string.
