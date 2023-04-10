@@ -17,12 +17,12 @@ char *cap_string(char *str)
 	{
 		if (isspace(str[i]) || ispunct(str[i]))
 		{
-			next = 1;
+			shift = 1;
 		}
-		else if (next)
+		else if (shift)
 		{
 			str[i] = toupper(str[i]);
-			next = 0;
+			shift = 0;
 		}
 	}
 
