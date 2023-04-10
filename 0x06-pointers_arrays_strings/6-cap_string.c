@@ -10,9 +10,10 @@
 */
 char *cap_string(char *str)
 {
+	int i;
 	bool new_word = true;
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (new_word && islower(str[i]))
 		{
