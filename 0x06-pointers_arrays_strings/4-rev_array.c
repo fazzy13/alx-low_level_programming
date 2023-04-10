@@ -1,4 +1,4 @@
-#include <string.h>
+i#include <string.h>
 
 /**
 * reverse_array - a function that reverses the content of an array of integers.
@@ -18,8 +18,8 @@ void reverse_array(int *a, int n)
 		first_index++;
 		last_index--;
 
-		temp = a[i];
-		a[i] = a[j];
-		a[j] = temp;
+		temp = a[first_index];
+		a[first_index] = a[last_index];
+		a[last_index] = temp;
 	}
 }
