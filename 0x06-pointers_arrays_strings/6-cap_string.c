@@ -1,6 +1,5 @@
 #include <ctype.h>
 #include <stdbool.h>
-#include <string.h>
 /**
 * cap_string - a function that capitalizes all words of a string.
 *
@@ -10,30 +9,29 @@
 */
 char *cap_string(char *str)
 {
-	int i;
-	bool new_word = true;
+int index = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (str[index])
 	{
-		if (new_word && islower(str[i]))
-		{
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
 
-			str[i] = toupper(str[i]);
-		}
-
-
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-			str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-			str[i] == '}' || str[i] == '\0')
-		{
-			new_word = true;
-		}
-		else
-		{
-			new_word = false;
-		}
-	}
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+		index++;
+	}	
 	return (str);
 }
