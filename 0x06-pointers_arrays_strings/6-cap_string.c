@@ -11,7 +11,7 @@ char *cap_string(char *str)
 {
 	int i;
 	int len = strlen(str);
-	int shift;
+	int shift = 1;
 
 	for (i = 0; i < len; i++)
 	{
@@ -19,7 +19,7 @@ char *cap_string(char *str)
 		{
 			next = 1;
 		}
-		else
+		else if (next)
 		{
 			str[i] = toupper(str[i]);
 			next = 0;
