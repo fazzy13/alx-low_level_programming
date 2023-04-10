@@ -15,11 +15,12 @@ void reverse_array(int *a, int n)
 
 	while (first_index < last_index)
 	{
-		first_index++;
-		last_index--;
 
 		temp = a[first_index];
 		a[first_index] = a[last_index];
 		a[last_index] = temp;
+
+		first_index++;
+		last_index--;
 	}
 }
