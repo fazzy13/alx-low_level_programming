@@ -3,6 +3,7 @@
 /**
  * print_number - Prints an integer using _putchar function.
  * @n: The integer to be printed.
+ * Return: return digit
  */
 void print_number(int n)
 {
@@ -28,5 +29,6 @@ void print_number(int n)
 		_putchar('0' + digit);
 		divisor /= 10;
 	}
+	return (digit);
 }
 
