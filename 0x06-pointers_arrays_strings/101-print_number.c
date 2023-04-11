@@ -8,7 +8,7 @@ void print_number(int n)
 {
 	int divisor = 1;
 	int is_negative = 0;
-	int digit = (n / divisor) % 10;
+	int digit;
 
 	if (n < 0)
 	{
@@ -24,6 +24,7 @@ void print_number(int n)
 
 	while (divisor > 0)
 	{
+		digit = (n / divisor) % 10;
 		_putchar('0' + digit);
 		divisor /= 10;
 	}
