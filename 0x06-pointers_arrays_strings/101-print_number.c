@@ -9,7 +9,7 @@ void print_number(int n)
 {
 	int divisor = 1;
 	int is_negative = 0;
-	int digit;
+	unsigned int digit;
 
 	if (n < 0)
 	{
@@ -31,4 +31,3 @@ void print_number(int n)
 	}
 	return (digit);
 }
-
