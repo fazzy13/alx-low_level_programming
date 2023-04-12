@@ -1,21 +1,6 @@
 #include <stdio.h>
 
 /**
- * add_digits - Adds two digits with carry.
- * @digit1: The first digit.
- * @digit2: The second digit.
- * @carry: The carry from previous addition.
- *
- * Return: The sum of digit1, digit2, and carry.
- */
-int add_digits(int digit1, int digit2, int *carry)
-{
-	int sum = digit1 + digit2 + *carry;
-	*carry = sum / 10;
-	return sum % 10;
-}
-
-/**
  * infinite_add - Adds two numbers.
  * @n1: The first number.
  * @n2: The second number.
@@ -49,10 +34,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		int digit1 = (i >= 0) ? (n1[i] - '0') : 0;
 		int digit2 = (j >= 0) ? (n2[j] - '0') : 0;
 
-		sum = add_digits(digit1, digit2, &carry);
+		sum = digit1 + digit2 + carry;
 
-		r[--k] = sum + '0';
+		r[--k] = sum % 10 + '0';
 
+		carry = sum / 10;
 		i--;
 		j--;
 
