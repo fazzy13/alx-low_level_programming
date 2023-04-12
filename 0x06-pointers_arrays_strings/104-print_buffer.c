@@ -1,28 +1,25 @@
 #include <stdio.h>
+#include "main.h"
 
+
+void print_hex(char *b, int size);
+void print_ascii(char *b, int size);
+void print_buffer(char *b, int size);
 /**
- * print_buffer - prints the content of a buffer
+ * print_hex - prints hexadecimal representation of buffer content
  * @b: pointer to the buffer
  * @size: size of the buffer
  *
- * Description: This function prints the content of size bytes of the buffer
- * pointed by b. Output is formatted to show 10 bytes per line, with the
- * hexadecimal representation of the bytes, followed by the corresponding
- * printable characters (if applicable), separated by spaces. Each line starts
- * with the position of the first byte of the line in hexadecimal (8 chars),
- * starting with 0. Each line ends with a new line \n. If size is 0 or less,
- * the output is a new line only \n. This function uses the standard library
- * for printing.
+ * Description: This function prints the hexadecimal representation of size
+ * bytes of the buffer pointed by b. Output is formatted to show 10 bytes per
+ * line, with the hexadecimal representation of the bytes separated by spaces.
+ * Each line starts with the position of the first byte of the line in
+ * hexadecimal (8 chars), starting with 0. This function is a helper function
+ * used by print_buffer.
  */
-void print_buffer(char *b, int size)
+void print_hex(char *b, int size)
 {
 	int i, j;
-
-	if (size <= 0)
-	{
-		printf("\n");
-		return;
-	}
 
 	for (i = 0; i < size; i += 10)
 	{
@@ -39,7 +36,27 @@ void print_buffer(char *b, int size)
 				printf(" ");
 		}
 
-		printf(" ");
+		printf("\n");
+	}
+}
+
+/**
+ * print_ascii - prints ASCII representation of buffer content
+ * @b: pointer to the buffer
+ * @size: size of the buffer
+ *
+ * Description: This function prints the ASCII representation of size bytes of
+ * the buffer pointed by b. Output is formatted to show 10 bytes per line, with
+ * the corresponding printable characters (if applicable), separated by spaces.
+ * Each line ends with a new line \n. This function is a helper function used
+ * by print_buffer.
+ */
+void print_ascii(char *b, int size)
+{
+	int i, j;
+
+	for (i = 0; i < size; i += 10)
+	{
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
@@ -57,5 +74,31 @@ void print_buffer(char *b, int size)
 
 		printf("\n");
 	}
+}
+
+/**
+ * print_buffer - prints the content of a buffer
+ * @b: pointer to the buffer
+ * @size: size of the buffer
+ *
+ * Description: This function prints the content of size bytes of the buffer
+ * pointed by b. Output is formatted to show 10 bytes per line, with the
+ * hexadecimal representation of the bytes, followed by the corresponding
+ * printable characters (if applicable), separated by spaces. Each line starts
+ * with the position of the first byte of the line in hexadecimal (8 chars),
+ * starting with 0. Each line ends with a new line \n. If size is 0 or less,
+ * the output is a new line only \n. This function uses the standard library
+ * for printing.
+ */
+void print_buffer(char *b, int size)
+{
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
+
+	print_hex(b, size);
+	print_ascii(b, size);
 }
 
