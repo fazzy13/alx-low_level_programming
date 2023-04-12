@@ -1,54 +1,71 @@
 #include <stdio.h>
+#include "main.h"
+
+/* Function prototypes */
+int add_digits(int d1, int d2, int carry);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
 /**
- * infinite_add - Adds two numbers.
- * @n1: The first number.
- * @n2: The second number.
- * @r: The buffer to store the result.
- * @size_r: The size of the buffer.
+ * add_digits - helper function to add two digits with carry-over
+ * @d1: digit one
+ * @d2: digit two
+ * @carry: carry-over from previous operation
  *
- * Return: A pointer to the result, or 0 if the result cannot be stored in r.
+ * Return: sum of d1, d2, and carry
+ */
+int add_digits(int d1, int d2, int carry)
+{
+	int sum = d1 + d2 + carry;
+
+	if (sum >= 10)
+		carry = 1;
+	else
+		carry = 0;
+	return (sum % 10);
+}
+
+/**
+ * infinite_add - adds two numbers
+ * @n1: number one
+ * @n2: number two
+ * @r: buffer that the function will use to store the result
+ * @size_r: buffer size
+ *
+ * Return: pointer to the result in the buffer
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = 0, len2 = 0;
-	int carry = 0;
-	int sum = 0;
-	int i, j, k;
+	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
 
-	while (n1[len1] != '\0')
-		len1++;
-	while (n2[len2] != '\0')
-		len2++;
-
-	if (len1 > size_r - 1 || len2 > size_r - 1)
+	while (*(n1 + c1) != '\0')
+		c1++;
+	while (*(n2 + c2) != '\0')
+		c2++;
+	if (c1 >= c2)
+		bg = c1;
+	else
+		bg = c2;
+	if (size_r <= bg + 1)
 		return (0);
-
-	i = len1 - 1;
-	j = len2 - 1;
-	k = size_r - 1;
-	r[k] = '\0';
-
-	while (i >= 0 || j >= 0)
+	r[bg + 1] = '\0';
+	c1--, c2--, size_r--;
+	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	while (bg >= 0)
 	{
-		int digit1 = (i >= 0) ? (n1[i] - '0') : 0;
-		int digit2 = (j >= 0) ? (n2[j] - '0') : 0;
-
-		sum = digit1 + digit2 + carry;
-
-		r[--k] = sum % 10 + '0';
-
-		carry = sum / 10;
-		i--;
-		j--;
-
-		if (k == 0 && (i >= 0 || j >= 0 || carry > 0))
-			return (0);
+		op = add_digits(dr1, dr2, add);
+		*(r + bg) = op + 48;
+		if (c1 > 0)
+			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
+		else
+			dr2 = 0;
+			bg--, size_r--;
 	}
-
-	if (carry > 0)
-		r[--k] = carry + '0';
-
-	return (&r[k]);
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
-
