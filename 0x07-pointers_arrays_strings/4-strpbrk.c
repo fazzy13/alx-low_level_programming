@@ -26,13 +26,13 @@ char *_strpbrk(char *s, char *accept)
         while (*accept_ptr != '\0')
         {
             if (*s_ptr == *accept_ptr)
-                return s_ptr;
+                return (s_ptr);
             accept_ptr++;
         }
         s_ptr++;
     }
 
-    return NULL;	
+    return (NULL);	
 
 }
 
