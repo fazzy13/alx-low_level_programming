@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _strpbrk - Locates the first occurrence of any byte in accept in s.
  *
@@ -18,22 +17,24 @@ char *_strpbrk(char *s, char *accept)
 	if (s == NULL || accept == NULL)
 		return (NULL);
 
-	char *s_ptr = s;
-	char *accept_ptr;
+	int i, j;
+	char *p;
 
-   while (*s_ptr != '\0')
-    {
-        accept_ptr = accept;
-        while (*accept_ptr != '\0')
-        {
-            if (*s_ptr == *accept_ptr)
-                return (s_ptr);
-            accept_ptr++;
-        }
-        s_ptr++;
-    }
+	i = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		while (accept[j] != '\0')
+		{
+			if (accept[j] == s[i])
+			{
+				p = &s[i];
+				return (p);
+			}
+			j++;
+		}
+		i++;
+	}
 
-    return (0);	
-
+	return (0);	
 }
-
