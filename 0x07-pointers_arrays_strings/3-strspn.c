@@ -1,34 +1,41 @@
-#include "main.h"
-
 /**
- * _strspn - return length of string that matches values consistently
- * @s: string to search
- * @accept: target matches
- * Return: number of bytes consecutively matched
+ * _strspn - Gets the length of a prefix substring
+ * @s: The input string
+ * @accept: The string containing the characters to be matched
+ *
+ * Return: The number of bytes in the initial segment of s which
+ * consist only of bytes from accept
+ *
+ * Description: The function iterates through the input string s
+ * character by character, comparing each
+ * character with the characters in the accept string. It counts the
+ * number of bytes in the initial segment
+ * of s that consist only of bytes from accept, and returns the count.
+ *
+ * FYI: The standard library provides a similar function: strspn.
+ * Run man strspn to learn more.
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int bytes = 0;
+	unsigned int len = 0;
+	int i, j;
+	int match = 0;
 
-	while (*s)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		int ind = 0;
-
-		while (accept[ind])
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (*s == accept[ind])
+			if (s[i] == accept[j])
 			{
-				bytes++;
+				len++;
+				match = 1;
 				break;
 			}
-
-			else if (accept[ind + 1] == '\0')
-				return (bytes);
-			ind++;
 		}
-		s++;
-	}
+		if (!match)
+			break;
 
-	return (bytes);
+		match = 0;
+	}
+	return (len);
 }
