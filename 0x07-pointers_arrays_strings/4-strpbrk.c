@@ -29,7 +29,7 @@ char *_strpbrk(char *s, char *accept)
 				return (*s_ptr);
 		}
 	}
-	return (NULL)
+	return (NULL);
 
 }
 
