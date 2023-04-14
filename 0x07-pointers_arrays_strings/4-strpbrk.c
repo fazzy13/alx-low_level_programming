@@ -20,16 +20,19 @@ char *_strpbrk(char *s, char *accept)
 	char *s_ptr = s;
 	char *accept_ptr;
 
-	for (i = 0; s_ptr[i] != '\0'; i++)
-	{
-		accept_ptr = accept;
-		for (j = 0; accept_ptr[j] != '\0'; j++)
-		{
-			if (*s_ptr == *accept_ptr)
-				return (*s_ptr);
-		}
-	}
-	return (NULL);
+   while (*s_ptr != '\0')
+    {
+        accept_ptr = accept;
+        while (*accept_ptr != '\0')
+        {
+            if (*s_ptr == *accept_ptr)
+                return s_ptr;
+            accept_ptr++;
+        }
+        s_ptr++;
+    }
+
+    return NULL;	
 
 }
 
