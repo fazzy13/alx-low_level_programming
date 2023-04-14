@@ -5,8 +5,8 @@
  *
  * @s: Pointer to a null-terminated string to be printed.
  *
- * Description: This function recursively prints a string @s followed by a new line
- * to the standard output. It starts printing the string from the first character
+ * Description: function recursively prints a string @s followed by a new line
+ * to the standard output. It starts printing the string from first character
  * and continues until the null terminator is encountered.
  *
  * Return: None (void).
