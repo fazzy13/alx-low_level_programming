@@ -7,7 +7,7 @@
  * Description: This function prints a string in reverse order
  * using recursion. It uses a base case to terminate the recursion
  * when the end of the string is reached, and recursively calls itself
- * with an incremented pointer to the next character in the string 
+ * with an incremented pointer to the next character in the string
  * until the entire string has been printed in reverse.
  *
  * Return: void
@@ -18,5 +18,5 @@ void _print_rev_recursion(char *s)
 		return;
 
 	_print_rev_recursion(s + 1);
-	_putchar(*s);	
+	_putchar(*s);
 }
