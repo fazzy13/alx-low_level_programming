@@ -6,6 +6,8 @@
  */
 int _sqrt_recursion(int n)
 {
+	int sqrtRecursive(int n, int guess);
+
     /* Base case: If n is negative, return -1 */
     if (n < 0)
         return -1;
