@@ -5,10 +5,10 @@
  * Return: The natural square root of the number, or -1 if not found
  */
 
-int sqrtRecursive(int n, int guess);
-
 int _sqrt_recursion(int n)
 {
+	int sqrtRecursive(int n, int guess);	
+
     /* Base case: If n is negative, return -1 */
     if (n < 0)
         return -1;
