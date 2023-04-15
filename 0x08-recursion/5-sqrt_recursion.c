@@ -7,7 +7,7 @@
 
 int _sqrt_recursion(int n)
 {
-	int sqrtRecursive(int n, int guess);	
+	int sqrtRecursive(int n, int guess);
 
 	/* Base case: If n is negative, return -1 */
 	if (n < 0)
@@ -30,7 +30,7 @@ int sqrtRecursive(int n, int guess)
 	if (guess * guess == n)
 		return (guess);
 	/* Base case: If guess squared is greater than n, return -1 */
-	else if (guess * guess > n)	
+	else if (guess * guess > n)
 		return (-1);
 	/* Recursive case: Increment guess and continue recursion */
 	else
