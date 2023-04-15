@@ -9,12 +9,12 @@ int _sqrt_recursion(int n)
 {
 	int sqrtRecursive(int n, int guess);	
 
-    /* Base case: If n is negative, return -1 */
-    if (n < 0)
-        return -1;
+	/* Base case: If n is negative, return -1 */
+	if (n < 0)
+		return (-1);
 
-    /* Call the helper function to calculate square root */
-    return sqrtRecursive(n, 0);
+	/* Call the helper function to calculate square root */
+	return (sqrtRecursive(n, 0));
 }
 
 /**
@@ -26,13 +26,13 @@ int _sqrt_recursion(int n)
  */
 int sqrtRecursive(int n, int guess)
 {
-    /* Base case: If guess squared equals n, return guess */
-    if (guess * guess == n)
-        return guess;
-    /* Base case: If guess squared is greater than n, return -1 */
-    else if (guess * guess > n)
-        return -1;
-    /* Recursive case: Increment guess and continue recursion */
-    else
-        return sqrtRecursive(n, guess + 1);
+	/* Base case: If guess squared equals n, return guess */
+	if (guess * guess == n)
+		return (guess);
+	/* Base case: If guess squared is greater than n, return -1 */
+	else if (guess * guess > n)	
+		return (-1);
+	/* Recursive case: Increment guess and continue recursion */
+	else
+		return (sqrtRecursive(n, guess + 1));
 }
