@@ -6,6 +6,8 @@
  */
 int is_prime_number(int n)
 {
+	int check_divisibility(int n, int divisor);
+
 	if (n <= 1)
 		return (0);
 
