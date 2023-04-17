@@ -1,23 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * main - print product of arg numbers
- * @argc: argument counter
- * @argv: numbers to multiply
- * Return: 0 on success, 1 if two arguments not given
+ * main - Entry point of the program
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line arguments
+ *
+ * Return: 0 on success, 1 on error
  */
-
 int main(int argc, char *argv[])
 {
+	int num1, num2, result;
+
+    /* Check if the program was called with exactly two arguments */
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	/* Convert the arguments to integers */
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+
+	/* Multiply the numbers */
+	result = num1 * num2;
+
+	/* Print the result */
+	printf("%d\n", result);
+
 	return (0);
 }
 
