@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - Entry point of the program
@@ -11,8 +10,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, num, sum;
+	int i, j, num, sum;
 
+	/* Check if the program was called with at least one argument*/
 	if (argc < 2)
 	{
 		printf("0\n");
@@ -22,17 +22,23 @@ int main(int argc, char *argv[])
 	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
-		for (int j = 0; argv[i][j] != '\0'; j++)
+		/* Loop through each character in the argument*/
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (!isdigit(argv[i][j]))
+			/* Check if the character is not a digit*/
+			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
+
+		/* Convert the argument to an integer and add to the sum */
 		num = atoi(argv[i]);
 		sum += num;
 	}
+
+	/* Print the sum */
 	printf("%d\n", sum);
 
 	return (0);
