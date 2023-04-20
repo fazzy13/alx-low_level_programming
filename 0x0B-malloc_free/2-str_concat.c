@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * concat_strings - Concatenate two strings
+ * str_concat - Concatenate two strings
  * @s1: Pointer to the first input string
  * @s2: Pointer to the second input string
  *
