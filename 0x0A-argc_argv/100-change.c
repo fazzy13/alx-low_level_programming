@@ -1,42 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * main - prints the minimum number coins for an amount of money
- * @argc: should count two arguments
- * @argv: arguments provided should be program name and amount of money
- * Return: least number of coins, 0 if negative amount, 1 if amount not given
+ * main - Entry point of the program
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line arguments
+ *
+ * Return: 0 on success, 1 on error
  */
-
 int main(int argc, char *argv[])
 {
-	int n, coins = 0;
+	int coins;
+	int cents;
 
+    /* Check if the program was called with exactly one argument */
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	if (argv[1][0] == '-')
+    /* Convert the argument to an integer */
+	cents = atoi(argv[1]);
+
+    /* Check if the value is negative, print 0 if it is */
+	if (cents < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	n = atoi(argv[1]);
+	/* Calculate the minimum number of coins */
+	coins = 0;
+	coins += cents / 25;
+	cents %= 25;
+	coins += cents / 10;
+	cents %= 10;
+	coins += cents / 5;
+	cents %= 5;
+	coins += cents / 2;
+	cents %= 2;
+	coins += cents;
 
-	coins += n / 25;
-	n = n % 25;
-	coins += n / 10;
-	n = n % 10;
-	coins += n / 5;
-	n = n % 5;
-	coins += n / 2;
-	n = n % 2;
-	coins += n / 1;
-
+	/* Print the result */
 	printf("%d\n", coins);
+
 	return (0);
 }
