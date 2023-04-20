@@ -21,9 +21,9 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	if (s1 == NULL)
-		s1 = " ";
+		s1 = "";
 	if (s2 == NULL)
-		s2 = " ";
+		s2 = "";
 
 	/* Get the lengths of the input strings */
 	len1 = strlen(s1);
