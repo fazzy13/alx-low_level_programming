@@ -20,6 +20,7 @@ void free_words(char **words, int word_count);
 int count_words(char *str)
 {
 	int i, word_count = 0;
+	int word_started = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -27,10 +28,21 @@ int count_words(char *str)
 		{
 			word_count++;
 		}
+		else if (str[i] != ' ')
+		{
+			word_started = 1;
+		}
+	}
+
+	/* If the input string contains only space return 0 */
+	if (!word_started)
+	{
+		return (0);
 	}
 
 	return (word_count);
 }
+
 
 /**
  * allocate_words - Allocates memory for an array of words
