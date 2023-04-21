@@ -1,23 +1,25 @@
+#include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include "main.h"
 
 /**
- * free_grid - frees a 2 dimensional grid
- * previously created lloc_grid function
- * @grid: pointer to 2D
- * @height: height of array
+ * free_grid - Frees memory allocated for a 2-dimensional array of integers
+ * @grid: Pointer to the 2-dimensional array (grid) to be freed
+ * @height: Height of the grid
  */
-
 void free_grid(int **grid, int height)
 {
 	int i;
 
-	if (grid == NULL)
-		free(grid);
+	if (grid == NULL || height <= 0)
+	{
+		return;
+	}
 
 	for (i = 0; i < height; i++)
+	{
 		free(grid[i]);
+	}
 
 	free(grid);
 }
+
