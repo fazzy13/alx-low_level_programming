@@ -119,7 +119,7 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	return (words);
+	return (NULL);
 }
 
 /**
