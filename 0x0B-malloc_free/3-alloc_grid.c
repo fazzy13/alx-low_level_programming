@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stddef.h>
+
 /**
  * alloc_grid - Allocates memory for a 2-dimensional array of integers
  * @width: Width of the grid
