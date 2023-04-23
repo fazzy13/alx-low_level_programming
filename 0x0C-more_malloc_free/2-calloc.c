@@ -1,33 +1,33 @@
-#include "main.h"
 #include <stdlib.h>
 
 /**
- * _calloc - Allocates memory
- * of elements each of an inputted byte size.
- * @nmemb: The number of elements.
- * @size: The byte size of
- * Return: If nmemb = 0, size = 0, or the function fails - NULL.
- * Otherwise - a pointer
+ * _calloc - Allocate memory for an array
+ * @nmemb: Number of elements in the array
+ * @size: Size of each element in bytes
+ *
+ * Return: Pointer to the allocated memory, or NULL on failure.
  */
-
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *mem;
-	char *filler;
-	unsigned int index;
+	void *ptr;
+	unsigned int i;
+	unsigned int total_size;
 
+	/* Check if nmemb or size is 0 */
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	mem = malloc(size * nmemb);
+	/* Calculate total size to be allocated */
+	total_size = nmemb * size;
 
-	if (mem == NULL)
+	/* Allocate memory using malloc */
+	ptr = malloc(total_size);
+	if (ptr == NULL)
 		return (NULL);
 
-	filler = mem;
+	/* Set allocated memory to zero */
+	for (i = 0; i < total_size; i++)
+		*((char *)ptr + i) = 0;
 
-	for (index = 0; index < (size * nmemb); index++)
-		filler[index] = '\0';
-
-	return (mem);
+	return (ptr);
 }
