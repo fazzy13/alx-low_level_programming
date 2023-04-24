@@ -2,12 +2,6 @@
 #define DOG_H
 
 /**
- * dog_t - Typedef for struct dog
- */
-
-	typedef struct dog dog_t;
-
-/**
  * struct dog - Represents information about a dog
  * @name: Pointer to a character string representing the name of the dog
  * @age: Floating-point value representing the age of the dog
@@ -21,6 +15,11 @@ struct dog
 	float age;
 	char *owner;
 };
+
+/**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
