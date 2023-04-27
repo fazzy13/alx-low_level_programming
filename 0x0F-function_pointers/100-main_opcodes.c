@@ -5,48 +5,39 @@
  * print_main_opcodes - Prints the opcodes of the main function
  * @num_bytes: Number of bytes to print
  */
-void print_main_opcodes(int num_bytes)
-{
-	int i;
-	char *main_ptr;
-
-	if (num_bytes < 0)
-	{
-		printf("Error: Number of bytes cannot be negative\n");
-		exit(2);
-	}
-
-	main_ptr = (char *)&print_main_opcodes;
-
-	printf("Main function opcodes:\n");
-
-	for (i = 0; i < num_bytes; i++)
-	{
-		printf("%02x ", main_ptr[i] & 0xff);
-	}
-
-	printf("\n");
-}
-
-/**
- * main - Entry point of the program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- * Return: 0 on success, 1 or 2 on error
- */
 int main(int argc, char *argv[])
 {
-	int num_bytes;
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
-		printf("Error: Incorrect number of arguments\n");
+		printf("Error\n");
 		exit(1);
 	}
 
-	num_bytes = atoi(argv[1]);
-	print_main_opcodes(num_bytes);
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	for (index = 0; index < bytes; index++)
+	{
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (index == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
+	}
+
+	printf("\n");
 
 	return (0);
 }
-
