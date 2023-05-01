@@ -29,6 +29,7 @@ size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 void delete_nodeint_at_index(listint_t **head, unsigned int index);
+int _putchar(char c);
 
 #endif /* LISTS_H */
 
