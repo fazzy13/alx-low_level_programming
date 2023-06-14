@@ -1,7 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdlib.h>
 
 /**
  * str_concat - Concatenate two strings
@@ -12,38 +10,34 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *concat;
-	size_t len1, len2;
+    char *concat;
+    size_t len1 = 0, len2 = 0;
 
-	/* Check if either input string is NULL */
-	if (s1 == NULL || s2 == NULL)
-	{
-		return (NULL);
-	}
+    /* Check if either input string is NULL */
+    if (s1 != NULL)
+        len1 = strlen(s1);
+    if (s2 != NULL)
+        len2 = strlen(s2);
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+    /* Allocate memory for the concatenated string */
+    concat = (char *)malloc(len1 + len2 + 1);
 
-	/* Get the lengths of the input strings */
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+    /* Check if memory allocation was successful */
+    if (concat == NULL)
+    {
+        return NULL;
+    }
 
-	/* Allocate memory for the concatenated string */
-	concat = (char *)malloc(len1 + len2 + 1);
+    /* Copy the first input string to the concatenated string */
+    if (s1 != NULL)
+        strcpy(concat, s1);
+    else
+        concat[0] = '\0';
 
-	/* Check if memory allocation was successful */
-	if (concat == NULL)
-	{
-		return (NULL);
-	}
+    /* Concatenate the second input string to the concatenated string */
+    if (s2 != NULL)
+        strcat(concat, s2);
 
-	/* Copy the first input string to the concatenated string */
-	strcpy(concat, s1);
-
-	/* Concatenate the second input string to the concatenated string */
-	strcat(concat, s2);
-
-	return (concat);
+    return concat;
 }
+
