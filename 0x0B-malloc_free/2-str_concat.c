@@ -25,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 	/* Check if memory allocation was successful */
 	if (concat == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	/* Copy the first input string to the concatenated string */
@@ -38,6 +38,6 @@ char *str_concat(char *s1, char *s2)
 	if (s2 != NULL)
 		strcat(concat, s2);
 
-	return concat;
+	return (concat);
 }
 
