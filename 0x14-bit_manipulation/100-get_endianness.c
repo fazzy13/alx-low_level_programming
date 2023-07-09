@@ -7,7 +7,12 @@
  */
 int get_endianness(void)
 {
-	union
+	/**
+	 * union endianness_check - Union to check endianness
+	 * @i: An unsigned int value.
+	 * @c: An unsigned char value.
+	 */
+	union endianness_check
 	{
 		unsigned int i;
 		unsigned char c;
