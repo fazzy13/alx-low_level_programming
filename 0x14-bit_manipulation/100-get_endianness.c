@@ -7,21 +7,11 @@
  */
 int get_endianness(void)
 {
-	/**
-	 * endianness_check - Union to check endianness
-	 * @i: An unsigned int value.
-	 * @c: An unsigned char value.
-	 */
-	union endianness_check
-	{
-		unsigned int i;
-		unsigned char c;
-	} check_endian;
-
-	check_endian.i = 1;
+	unsigned int num = 1;
+	unsigned char *ptr = (unsigned char *)&num;
 
 	/* If the least significant byte is 1, it is little endian */
-	if (check_endian.c == 1)
+	if (*ptr == 1)
 		return (1);
 	else
 		return (0);
