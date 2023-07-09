@@ -16,8 +16,8 @@ int get_endianness(void)
 
 	/* If the least significant byte is 1, it is little endian */
 	if (check_endian.c == 1)
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }
 
