@@ -11,16 +11,16 @@ By the end of this project, you should be able to:
 - Enhance your problem-solving skills and logical thinking through working with binary representations of numbers.
 
 ## Requirements
-- Allowed editors: vi, vim, emacs.
-- All your files will be compiled on Ubuntu 20.04 LTS using gcc, with the following compiler options: -Wall -Werror -Wextra -pedantic -std=gnu89.
+- Allowed editors: `vi, vim, emacs`.
+- All your files will be compiled on `Ubuntu 20.04 LTS` using `gcc`, with the following compiler options: `-Wall -Werror -Wextra -pedantic -std=gnu89`.
 - Ensure that all your files end with a new line.
-- A README.md file at the root of the project directory is mandatory.
-- Your code must adhere to the Betty coding style. You can check your code's compliance using the betty-style.pl and betty-doc.pl scripts.
+- A `README.md` file at the root of the project directory is mandatory.
+- Your code must adhere to the `Betty` coding style. You can check your code's compliance using the `betty-style.pl` and `betty-doc.pl` scripts.
 - The use of global variables is strictly prohibited.
 - Each function should consist of a maximum of five functions.
-- You are only allowed to use the following C standard library functions: malloc, free, and exit. Avoid using any other functions such as printf, puts, calloc, realloc, etc.
-- You are permitted to use the _putchar function.
-- You are not required to push the _putchar.c file. The checker will use its own version.
+- You are only allowed to use the following `C` standard library functions: `malloc`, `free`, and `exit`. Avoid using any other functions such as `printf`, `puts`, `calloc`, `realloc`, etc.
+- You are permitted to use the `_putchar` function.
+- You are not required to push the `_putchar.c` file. The checker will use its own version.
 
 ## Files and Directories
 The project contains the following tasks:
