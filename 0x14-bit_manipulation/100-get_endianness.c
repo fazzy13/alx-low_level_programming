@@ -7,7 +7,8 @@
  */
 int get_endianness(void)
 {
-	union {
+	union
+	{
 		unsigned int i;
 		unsigned char c;
 	} check_endian;
