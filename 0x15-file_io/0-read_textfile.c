@@ -57,6 +57,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 char *allocate_buffer(size_t size)
 {
 	char *buffer = malloc(sizeof(char) * (size + 1));
+
 	return (buffer);
 }
 
@@ -71,6 +72,7 @@ char *allocate_buffer(size_t size)
 ssize_t read_from_file(int file_descriptor, char *buffer, size_t size)
 {
 	ssize_t bytes_read = read(file_descriptor, buffer, size);
+
 	return (bytes_read);
 }
 
@@ -84,6 +86,7 @@ ssize_t read_from_file(int file_descriptor, char *buffer, size_t size)
 ssize_t write_to_stdout(const char *buffer, size_t size)
 {
 	ssize_t bytes_written = write(STDOUT_FILENO, buffer, size);
+
 	return (bytes_written);
 }
 
