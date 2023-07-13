@@ -10,15 +10,16 @@
  */
 void error_exit(int code, char *message, ...)
 {
-    va_list args;
-    va_start(args, message);
+	va_list args;
 
-    dprintf(STDERR_FILENO, "Error: ");
-    vdprintf(STDERR_FILENO, message, args);
-    dprintf(STDERR_FILENO, "\n");
+	va_start(args, message);
 
-    va_end(args);
-    exit(code);
+	dprintf(STDERR_FILENO, "Error: ");
+	vdprintf(STDERR_FILENO, message, args);
+	dprintf(STDERR_FILENO, "\n");
+
+	va_end(args);
+	exit(code);
 }
 
 
