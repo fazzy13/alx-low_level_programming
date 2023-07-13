@@ -36,23 +36,23 @@ void cp_file(const char *file_from, const char *file_to)
 	/* open sourcefile for reading */
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
-		error_exit(98, "Error: Can't read from file %s", file_from);
+		error_exit(98, "Error: Can't read from %s", file_from);
 
 	/* open desitination file for writing (truncate if exit) */
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC | PERMISSIONS);
 	if (fd_to == -1)
-		error_exit(99, "Error: Cant write to file %s", file_to);
+		error_exit(99, "Error: Cant write to %s", file_to);
 
 	/* copy file content */
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1 || bytes_written != bytes_read)
-			error_exit(99, "Error: Can't write to file");
+			error_exit(99, "Error: Can't write to  %s", file_from);
 	}
 
 	if (bytes_read == -1)
-		error_exit(98, "Error: Can't read from file");
+		error_exit(98, "Error: Can't read from %s", file_to);
 
 
 	/* close file descriptors */
