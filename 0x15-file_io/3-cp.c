@@ -8,11 +8,19 @@
  * @code: The exit code.
  * @message: The error message to print.
  */
-void error_exit(int code, char *message)
+void error_exit(int code, char *message, ...)
 {
-	dprintf(STDERR_FILENO, "%s\n", message);
-	exit(code);
+    va_list args;
+    va_start(args, message);
+
+    dprintf(STDERR_FILENO, "Error: ");
+    vdprintf(STDERR_FILENO, message, args);
+    dprintf(STDERR_FILENO, "\n");
+
+    va_end(args);
+    exit(code);
 }
+
 
 /**
  * cp_file - Copies the content of one file to another.
@@ -27,12 +35,12 @@ void cp_file(const char *file_from, const char *file_to)
 	/* open sourcefile for reading */
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
-		error_exit(98, "Error: Can't read from file");
+		error_exit(98, "Error: Can't read from file %s", file_from);
 
 	/* open desitination file for writing (truncate if exit) */
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC | PERMISSIONS);
 	if (fd_to == -1)
-		error_exit(99, "Error: Cant write to file");
+		error_exit(99, "Error: Cant write to file %s", file_to);
 
 	/* copy file content */
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -48,9 +56,9 @@ void cp_file(const char *file_from, const char *file_to)
 
 	/* close file descriptors */
 	if (close(fd_from) == -1)
-		error_exit(100, "Error: Can't close source file descriptor");
+		error_exit(100, "Error: Can't close fd", fd_from);
 	if (close(fd_to) == -1)
-		error_exit(100, "Error: Can't close destination file descriptor");
+		error_exit(100, "Error: Can't close fd", fd_to);
 }
 
 /**
