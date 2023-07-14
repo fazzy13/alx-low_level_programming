@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdarg.h>
+#include <elf.h>
 
 /* Function prototypes */
 int _putchar(char c);
